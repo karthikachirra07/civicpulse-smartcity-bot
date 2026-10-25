@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23142B4A%22/><path d=%22M20 52 L35 52 L44 32 L56 68 L65 52 L80 52%22 fill=%22none%22 stroke=%22%230F9D91%22 stroke-width=%228%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivicPulse — Smarter Services. Better Cities.</title>
+    <meta name="description" content="CivicPulse is an AI-powered citizen service assistance and complaint registration platform for modern smart cities." />
+    <!-- Typography: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#142B4A',
+                dark: '#0D1E35',
+                light: '#1F3F6B'
+              },
+              teal: {
+                DEFAULT: '#0F9D91',
+                hover: '#0C8379',
+                light: '#E6F6F5',
+                50: '#F0FAF9',
+                100: '#E0F5F3',
+                500: '#0F9D91',
+                600: '#0D8A7F',
+                700: '#0A7067'
+              },
+              page: '#F5F7FA',
+              card: '#FFFFFF',
+              ink: {
+                DEFAULT: '#1D2939',
+                secondary: '#667085',
+                muted: '#98A2B3'
+              },
+              accent: {
+                success: '#16865C',
+                warning: '#B7791F',
+                error: '#D64545'
+              },
+              stroke: '#E4E7EC'
+            },
+            fontFamily: {
+              sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+              heading: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+            },
+            boxShadow: {
+              card: '0 1px 3px rgba(16, 24, 40, 0.05), 0 1px 2px rgba(16, 24, 40, 0.03)',
+              hover: '0 4px 12px rgba(16, 24, 40, 0.08), 0 2px 4px rgba(16, 24, 40, 0.04)',
+              modal: '0 20px 25px -5px rgba(16, 24, 40, 0.1), 0 8px 10px -6px rgba(16, 24, 40, 0.05)'
+            },
+            borderRadius: {
+              'xl': '12px',
+              '2xl': '16px'
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-[#F5F7FA] text-[#1D2939] antialiased selection:bg-[#E6F6F5] selection:text-[#0F9D91]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
