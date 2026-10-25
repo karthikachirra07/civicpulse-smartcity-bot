@@ -1,244 +1,203 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# SmartCity AI — AI Chatbot for Citizen Service Assistance and Complaint Registration in Smart Cities
+# CivicPulse — AI-Powered Smart City Citizen Service & Complaint Registration Platform
 
-> **Academic EDP Project Prototype**  
-> *SmartCity AI* is an interactive civic-technology platform prototype featuring an AI assistant, automated complaint lifecycle tracking, role-based workflows (Citizen, Municipal Officer, Administrator), and real-time governance analytics tailored for Hyderabad Municipal Administration.
+[![Vercel Deployment](https://img.shields.io/badge/Deployment-Live%20on%20Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://snappy-opal-vdlq0tf.tmp.now)
+[![React 18](https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.4-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.3-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
----
-
-## 📌 Problem Statement & Objectives
-
-Citizens in rapidly expanding smart cities frequently struggle with fragmented municipal portals, opaque complaint resolution, and slow response times. **SmartCity AI** bridges this gap through:
-
-1. **24/7 AI-Powered Citizen Assistance:** An intelligent chatbot that resolves municipal service inquiries, suggests relevant departments, detects emergency keywords, and drafts structured grievance tickets.
-2. **Transparent Complaint Registration & Tracking:** Unique tracking identifiers (`SC-2026-XXXX`), dynamic SLA countdowns, step-by-step audit timelines, and citizen satisfaction ratings.
-3. **Role-Based Governance Dashboards:**
-   - **Citizens:** Submit complaints, track public/personal tickets, request re-openings, and view notifications.
-   - **Municipal Officers:** Triage priority queues, manage departmental workloads, update statuses, and log internal/public resolution notes.
-   - **Administrators:** Monitor executive KPIs, departmental SLAs, resolution trends, category breakdowns, and export audit data to CSV.
-4. **Multilingual & Voice Accessibility:** English, Telugu (తెలుగు), and Hindi (हिंदी) language localization with Web Speech API voice dictation.
+> **Academic Engineering Design Project (EDP)**  
+> **Tagline:** *Smarter Services. Better Cities.*  
+> **Jurisdiction:** Greater Hyderabad Municipal Corporation (GHMC) • Government of Telangana  
+> **Live Demo:** [https://snappy-opal-vdlq0tf.tmp.now](https://snappy-opal-vdlq0tf.tmp.now)  
+> **Claim Deployment:** [Claim to Your Vercel Account](https://vercel.com/claim-deployment?code=74881505-3d95-42de-9101-2d153ba5b4c7)
 
 ---
 
-## 🛡️ Prototype & Academic Disclaimer
+## 📖 Executive Summary & Problem Statement
 
-- **Simulation Notice:** All AI responses, ticket routing, notifications, and municipal operations are executed as an interactive prototype using browser `localStorage` persistence.
-- **No Real-World Municipal Submission:** This project does not transmit complaints to real municipal authorities (e.g., GHMC, HMWS&SB, or TSRTC) or contact emergency services.
-- **Safety First:** Emergency keywords (fire, flood, gas leak, medical) trigger automated guidance to official emergency hotlines (`112`, `100`, `101`, `108`).
+Rapidly expanding metropolitan smart cities like Hyderabad face severe challenges with civic service grievance redressal:
+- **Fragmented portals** where citizens must navigate complex bureaucratic department structures.
+- **Opaque complaint tracking** leading to repeated grievances, unresolved public safety hazards, and citizen dissatisfaction.
+- **Language barriers** hindering non-English speakers from effectively reporting issues.
+- **Slow triage and assignment** overloading municipal officers with unstructured complaints.
+
+**CivicPulse** is an enterprise-grade civic technology platform that unifies citizen service assistance, AI-driven grievance intake, automated department dispatch, SLA enforcement, and municipal governance into a single responsive system.
 
 ---
 
-## 🏗️ Architecture & Folder Structure
+## 🌟 Key Platform Features
+
+### 1. 3 Working Complaint Intake Pathways (Zero Blockers)
+Citizens are never blocked by forced login barriers or fake dead ends. Grievances can be registered via:
+1. **Homepage Fast Intake Widget (`/`)**: Directly on the landing page hero section. Pick a category, select a Hyderabad ward (Madhapur, Gachibowli, Banjara Hills, etc.), choose a common issue chip, and submit in seconds.
+2. **AI Assistant 1-Click Intake (`/chatbot`)**: Natural language chat in English, Telugu, or Hindi. The AI detects the category, locality, and urgency, offering a **"⚡ Register Complaint Right Now (1-Click)"** button inside the conversation.
+3. **Full Grievance Wizard (`/complaints/new`)**: Detailed multi-step form supporting photo attachments with live preview, GPS coordinates, AI department verification, and 1-click sample presets.
+
+### 2. Live Grievance Tracking & SLA Countdown (`/track`)
+- Every complaint generates an official ticket ID (e.g. `SC-2026-0001`).
+- Interactive **4-Stage Visual Timeline Stepper**: *Submitted $\rightarrow$ Under Review $\rightarrow$ In Progress $\rightarrow$ Resolved*.
+- Dynamic SLA countdown timer based on priority urgency (Critical: 6h, High: 12h, Medium: 24h, Low: 48h).
+- Assigned officer details, department contacts, and citizen reopen mechanism.
+
+### 3. Real User Authentication & Persistent Sessions
+- Persistent user account registry stored in browser storage (`smartcity_user_accounts`).
+- Citizen registration (`/register`) with name, email, phone, ward selection, and password.
+- Secure login (`/login`) with credential validation, session retention, and genuine sign-out.
+- One-click tester personas for rapid evaluator testing.
+
+### 4. Role-Based Dashboards & Workflows
+- **Citizen Portal (`/complaints`)**: View personal filed tickets, track progress, review past resolutions, and inspect public citywide reports.
+- **Municipal Officer Command Queue (`/officer/dashboard`)**: Ward-specific grievance queue, priority sorting, status updates (*In Progress*, *Resolved*), and resolution inspection logs.
+- **City Administrator GIS Analytics (`/admin/dashboard`)**: Executive KPIs, departmental SLA compliance charts, category donut breakdowns, ward heatmaps, and full CSV audit export.
+
+### 5. Multilingual & Accessibility
+- Trilingual localization: **English**, **Telugu (తెలుగు)**, and **Hindi (हिंदी)**.
+- Integrated Web Speech API microphone dictation for hands-free voice complaints.
+- High-contrast civic color palette meeting accessibility contrast guidelines.
+
+---
+
+## 🔑 Demo Credentials
+
+To test all personas without registering a new account, use the 1-click buttons on the Login page or log in with these preloaded credentials:
+
+| Role | Persona Name | Email | Password | Pre-configured Jurisdiction |
+| :--- | :--- | :--- | :--- | :--- |
+| **Citizen** | Ananya Sharma | `citizen@smartcity.gov.in` | `citizen123` | Ward 42 - Jubilee Hills, Hyderabad |
+| **Municipal Officer** | Eng. Suresh Reddy | `officer@smartcity.gov.in` | `officer123` | Roads & Potholes / Water Supply (Zone 3) |
+| **Administrator** | Dr. Radhika Iyer | `admin@smartcity.gov.in` | `admin123` | Central Municipal Operations Command (GHMC) |
+
+*(You can also register a brand new citizen account at `/register` at any time).*
+
+---
+
+## 💻 Tech Stack & Architecture
+
+- **Frontend Framework:** React 18 with TypeScript
+- **Build Tool & Bundler:** Vite 5
+- **Styling & Design System:** Tailwind CSS (Navy `#142B4A`, Teal `#0F9D91`, Slate `#F5F7FA`)
+- **Icons:** Zero-dependency SVG icon system (Lucide-inspired)
+- **Data Visualization:** Native SVG charting components (Bar, Donut, Area, Trend)
+- **State Management & Persistence:** React Context API + LocalStorage persistence
+- **Routing:** Client-side HTML5 history router with SPA query parameter synchronization and route guards
+- **Deployment:** Vercel Global Edge Network with SPA URL rewrites
 
 ```
 civicpulse-smartcity-bot/
 ├── index.html                   # HTML template with civic header metadata
-├── package.json                 # Minimal, reliable dependencies (React 18 + Vite)
+├── package.json                 # Dependencies & project scripts
 ├── tsconfig.json                # TypeScript compiler configuration
 ├── vite.config.ts               # Vite bundler configuration
+├── vercel.json                  # Vercel SPA rewrite routing rules
+├── netlify.toml                 # Netlify deployment configuration
+├── public/
+│   └── _redirects              # Static SPA fallback redirects
+├── .github/workflows/
+│   └── deploy.yml              # GitHub Actions Pages deployment workflow
 └── src/
     ├── main.tsx                 # Application entry point
-    ├── App.tsx                  # Main router setup & role-based route guards
-    ├── index.css                # Civic-tech design tokens (Navy #0f172a, Teal #0f766e, Slate)
+    ├── App.tsx                  # Root component & route declarations
+    ├── index.css                # Tailwind CSS & civic typography rules
     ├── types/
-    │   └── index.ts             # TypeScript interfaces (User, Complaint, Department, etc.)
+    │   └── index.ts             # TypeScript definitions (User, Complaint, Department, etc.)
     ├── services/
-    │   ├── authService.ts       # Auth store, user directory, demo profiles
-    │   ├── complaintService.ts  # Ticket generation, SLA calculation, CSV export, audit trail
-    │   ├── departmentService.ts # 7 municipal departments (Roads, Waste, Water, etc.)
-    │   ├── notificationService.ts # In-app notification center store
-    │   └── aiChatService.ts     # Multi-turn intent detection, FAQ knowledge base, draft extractor
+    │   ├── authService.ts       # Account registry, password verification, session lifecycle
+    │   ├── complaintService.ts  # Ticket CRUD, SLA calculators, audit logs, CSV export
+    │   ├── departmentService.ts # GHMC departments (Roads, Water, Waste, etc.)
+    │   ├── notificationService.ts # In-app notification center
+    │   └── aiChatService.ts     # Trilingual NLP, intent detection, 1-click in-chat ticket creation
     ├── context/
-    │   ├── AuthContext.tsx      # Auth & role state with 1-click test switcher
-    │   ├── NotificationContext.tsx # Notifications store & unread counter
-    │   └── LanguageContext.tsx  # Trilingual dictionary (EN, TE, HI) & speech synthesis
+    │   ├── AuthContext.tsx      # Current user session state & login/logout methods
+    │   ├── NotificationContext.tsx # Notification alerts & unread counters
+    │   └── LanguageContext.tsx  # Trilingual dictionary (EN, TE, HI)
     ├── router/
-    │   └── index.tsx            # Zero-dependency HTML5 history router & ProtectedRoute
+    │   └── index.tsx            # Custom HTML5 router, Route, Link, useNavigate, useLocation
     ├── components/
-    │   ├── common/
-    │   │   ├── Icons.tsx        # Zero-dependency SVG icons (Lucide-styled)
-    │   │   ├── Logo.tsx         # Municipal civic seal emblem
-    │   │   ├── StatusBadge.tsx  # Priority & status color badges
-    │   │   ├── Charts.tsx       # Native SVG Bar, Donut, Area, and Trend charts
-    │   │   ├── DemoBanner.tsx   # Academic EDP banner + 1-click role switcher
-    │   │   └── VoiceMic.tsx     # Web Speech API voice input component
-    │   ├── layout/
-    │   │   ├── Navbar.tsx       # Header with language picker, notifications, profile menu
-    │   │   ├── Sidebar.tsx      # Role-filtered desktop navigation sidebar
-    │   │   ├── Footer.tsx       # Municipal helplines & academic footer
-    │   │   └── DashboardLayout.tsx # Page wrapper with breadcrumbs
-    │   └── chatbot/
-    │       ├── ChatInterface.tsx # Interactive conversational message view
-    │       └── FloatingChatbot.tsx # Global floating chatbot widget
+    │   ├── common/              # Reusable icons, status badges, charts, civic header banner
+    │   ├── layout/              # Navbar, Sidebar, Footer, DashboardLayout
+    │   └── chatbot/             # ChatInterface, FloatingChatbot
     └── pages/
-        ├── LandingPage.tsx      # Portal landing page with services, stats & FAQs
-        ├── LoginPage.tsx        # Role-tabbed login with 1-click demo credential fill
-        ├── RegisterPage.tsx     # Citizen registration form
-        ├── ProfilePage.tsx      # User profile & ward settings
-        ├── NotificationsPage.tsx # In-app alerts center
-        ├── ChatbotPage.tsx      # Full-page dedicated AI assistant
-        ├── TrackComplaintPage.tsx # Public grievance lookup by Ticket ID
-        ├── citizen/
-        │   ├── CitizenDashboard.tsx    # Citizen overview, active complaints, quick action
-        │   ├── CitizenComplaintsPage.tsx # Filterable personal complaint list
-        │   ├── ComplaintDetailPage.tsx # Complaint timeline, photo view, rating, re-open
-        │   └── NewComplaintPage.tsx    # Multi-step complaint submission wizard
-        ├── officer/
-        │   ├── OfficerDashboard.tsx    # Department workload queue & overdue tracking
-        │   └── OfficerComplaintDetailPage.tsx # Officer review, status update & note logging
-        ├── admin/
-        │   ├── AdminDashboard.tsx       # Executive KPIs, analytics charts, CSV export
-        │   ├── AdminComplaintsPage.tsx  # Full database table with multi-criteria filters
-        │   ├── AdminDepartmentsPage.tsx # Department SLA configuration
-        │   └── AdminUsersPage.tsx       # System user directory
-        ├── NotFoundPage.tsx     # 404 handler
-        └── UnauthorizedPage.tsx # 403 access control handler
+        ├── LandingPage.tsx      # Public portal with Hero Quick Grievance Widget & services
+        ├── LoginPage.tsx        # Authentication with 1-click persona fills
+        ├── RegisterPage.tsx     # Citizen registration
+        ├── TrackComplaintPage.tsx # Grievance tracking stepper by Ticket ID
+        ├── ChatbotPage.tsx      # Dedicated full-page AI assistant
+        ├── citizen/             # Citizen dashboard, complaints list, detailed form
+        ├── officer/             # Officer queue, review modal, status management
+        └── admin/               # Admin analytics, department config, user directory
 ```
 
 ---
 
-## 🚀 Quick Start Guide
+## 🛠️ Local Development & Build
 
 ### 1. Prerequisites
-Ensure you have **Node.js** (v18.0.0 or later) and **npm** installed on your system.
+- **Node.js** v18.0.0 or higher
+- **npm** v9.0.0 or higher
 
 ### 2. Installation
-Open your terminal in the project directory:
 ```bash
-cd "C:\Users\krishna kanth\.gemini\antigravity\scratch\civicpulse-smartcity-bot"
+git clone https://github.com/<your-username>/civicpulse-smartcity-bot.git
+cd civicpulse-smartcity-bot
 npm install
 ```
 
-### 3. Start Development Server
+### 3. Run Development Server
 ```bash
 npm run dev
 ```
-Open your browser at `http://localhost:5173/` (or the URL displayed in your terminal).
+Open [http://localhost:5173/](http://localhost:5173/) in your web browser.
 
----
-
-## 🔑 Demo Credentials & Quick Role Switching
-
-To test all personas without manually logging in and out, use the **1-click Role Switcher** located in the top banner on every page, or log in with these preloaded credentials:
-
-| Role | Name | Email | Password | Preloaded Jurisdiction / Focus |
-| :--- | :--- | :--- | :--- | :--- |
-| **Citizen** | Ananya Sharma | `citizen@smartcity.gov.in` | `citizen123` | Ward 42 - Jubilee Hills, Hyderabad |
-| **Municipal Officer** | Eng. Suresh Reddy | `officer@smartcity.gov.in` | `officer123` | Roads & Potholes / Water Supply, Zone 3 |
-| **Administrator** | Dr. Radhika Iyer | `admin@smartcity.gov.in` | `admin123` | Central Municipal Operations Command |
-
----
-
-## 🔄 End-to-End Test Workflow
-
-1. **Citizen Experience:**
-   - Click **"Citizen"** in the top banner or log in as Ananya.
-   - Open the **AI Assistant** (floating bottom-right button or `/chat`).
-   - Type `"There is a large pothole on Jubilee Hills Road No. 36 causing traffic jams"`.
-   - The chatbot detects intent, suggests Roads & Potholes with High priority, and offers a **"Register this Complaint"** button.
-   - Click it to pre-fill the multi-step complaint form (`/citizen/new-complaint`).
-   - Complete Step 2 & 3, attach a demo photo, and click **Submit**.
-   - Note the generated ticket ID (e.g., `SC-2026-8910`).
-2. **Officer Experience:**
-   - Switch to **"Officer"** in the top banner.
-   - Notice the newly created complaint in the **High Priority Work Queue**.
-   - Click on the complaint to open the **Processing Console**.
-   - Change the status from `Open` to `In Progress`, add an internal note: `"Inspected site. Asphalt patching crew dispatched"`.
-3. **Public Tracking:**
-   - Open `/track` in the navigation bar.
-   - Enter your ticket ID (`SC-2026-8910`) to see the real-time public timeline and status update.
-4. **Admin Governance & Analytics:**
-   - Switch to **"Admin"** in the top banner.
-   - Review updated KPIs on the **Executive Dashboard**.
-   - Inspect the **Departmental SLA chart**, **Monthly volume trends**, and category donut breakdown.
-   - Click **Export CSV** on `/admin/complaints` to download the entire audit register.
-
----
-
-## 🌐 Future Full-Stack Production Integration
-
-This prototype is intentionally structured to facilitate seamless backend integration:
-
-```
-[ Frontend: React / Vite ] 
-       │
-       ▼ (REST API / JWT)
-[ Backend: Node.js + Express.js ]
-  ├── /api/auth          --> bcrypt + JWT verification
-  ├── /api/complaints    --> Mongoose / MongoDB Atlas
-  ├── /api/departments   --> SLA & jurisdictional routing
-  └── /api/ai/chat       --> LangChain / Gemini 1.5 Pro with RAG
-       │
-       ▼
-[ MongoDB Database + Cloud Object Storage (S3 / GCS for Complaint Photos) ]
-```
-
-### Steps to Connect:
-1. **API Service Abstraction:** Replace the `localStorage` operations in `src/services/complaintService.ts` and `src/services/authService.ts` with standard `fetch` or `axios` calls pointing to `VITE_API_BASE_URL`.
-2. **LLM & RAG Integration:** In `src/services/aiChatService.ts`, replace the rule-based intent analyzer with a call to your backend `/api/ai/chat` endpoint, integrating Gemini with vector search over municipal citizen charters.
-3. **Authentication:** Swap the simulated token in `src/services/authService.ts` with `httpOnly` JWT cookies or standard Bearer authorization headers.
-
----
-
-## 📜 Academic Project Information
-
-- **Project Title:** SmartCity AI — AI Chatbot for Citizen Service Assistance and Complaint Registration in Smart Cities
-- **Project Domain:** Engineering Design Project (EDP) / Civic Technology / Smart Governance
-- **Focus City:** Hyderabad (Telangana, India)
-- **Year:** 2026
-=======
-# civicpulse-smartcity-bot
-Citizens in smart cities often struggle with inefficient service access and slow complaint registration. Existing systems lack transparency, multilingual support, and real-time updates. There is a need for an intelligent chatbot that can provide 24/7 assistance, automate complaint handling, and integrate with smart city platforms.
->>>>>>> 721b59194ad54875e195a4fea0aa88b8066f9691
-=======
-# CivicPulse — AI-Powered Smart City Citizen Services
-
-CivicPulse is a web application designed to help citizens access civic services, register complaints, and track their progress through a centralized platform.
-
-## Features
-
-- Citizen registration and login
-- AI-powered civic-service assistance
-- Complaint registration and tracking
-- Complaint categorization and priority suggestions
-- Municipal officer complaint management
-- Administrator dashboard and analytics
-- Responsive user interface
-
-## Technology Stack
-
-- Frontend: React, TypeScript, Vite
-- Styling: Tailwind CSS
-- Backend: Node.js and Express (if configured)
-- Database: MongoDB (if configured)
-- AI integration: To be configured through a secure backend service
-
-## Getting Started
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Create a production build:
-
+### 4. Build for Production
 ```bash
 npm run build
 ```
+Generates an optimized static bundle in the `dist/` directory.
 
-## Project Status
+### 5. Preview Production Build Locally
+```bash
+npm run preview
+```
+Serves the production build at [http://localhost:4173/](http://localhost:4173/).
 
-CivicPulse is under development. Features requiring backend, database, or AI configuration must be connected and tested before production use.
+---
 
-## Security
+## 🚀 Deployment
 
-Do not commit API keys, passwords, database credentials, or `.env` files to GitHub.
->>>>>>> c43f833f85ecedaaf73bd4ccaa5fbf5ecd62ea2c
+The project is pre-configured for instant deployment:
+
+### Vercel (Current Live Deployment)
+- Live URL: **[https://snappy-opal-vdlq0tf.tmp.now](https://snappy-opal-vdlq0tf.tmp.now)**
+- Claim Link: **[Claim to Personal Vercel](https://vercel.com/claim-deployment?code=74881505-3d95-42de-9101-2d153ba5b4c7)**
+- To deploy your own copy via CLI:
+  ```bash
+  npx vercel
+  ```
+
+### GitHub Pages (Automated via GitHub Actions)
+Push the code to your GitHub repository:
+```bash
+git remote add origin https://github.com/<username>/civicpulse-smartcity-bot.git
+git branch -M main
+git push -u origin main
+```
+The included `.github/workflows/deploy.yml` workflow will automatically build and publish the site to your `github.io` domain.
+
+---
+
+## 🛡️ Academic Disclaimer & Safety Notice
+
+- **Prototype Notice:** This platform is an academic engineering prototype. All tickets, AI classifications, and dispatch notifications are simulated in local storage.
+- **No Real Municipal Affiliation:** This project is not officially affiliated with or operated by the Greater Hyderabad Municipal Corporation (GHMC), HMWS&SB, or the Government of Telangana.
+- **Emergency Safeguard:** For immediate life-threatening emergencies, fires, crimes, or medical crises, do not use this portal. Contact official emergency response numbers immediately:
+  - **112**: National Emergency Hotline
+  - **100**: Police Control
+  - **101**: Fire Department
+  - **108**: Emergency Ambulance Service
+
+---
+
+## 📄 License & Attribution
+
+Developed as an Academic Engineering Design Project (EDP) in Civic Technology and Smart City Governance (2026).
